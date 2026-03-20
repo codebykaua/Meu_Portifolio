@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfólio | Fernando</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #7c5cff;
+      --secondary: #00d4ff;
+      --bg-dark: #0a0f1f;
+      --bg-light: #f5f7ff;
+      --text-dark: #0d1325;
+      --text-light: #f5f7ff;
+    }
+
+    * { box-sizing: border-box; margin:0; padding:0; font-family:'Inter',sans-serif; }
+
+    body { background: var(--bg-dark); color: var(--text-light); line-height:1.6; }
+
+    header { display:flex; justify-content:space-between; align-items:center; padding:20px 40px; background: rgba(255,255,255,0.05); backdrop-filter: blur(12px); position:sticky; top:0; z-index:10; }
+
+    header h1 { font-size:1.8rem; font-weight:700; }
+
+    nav a { color: var(--text-light); margin-left:20px; text-decoration:none; font-weight:500; transition: color 0.3s; }
+
+    nav a:hover { color: var(--primary); }
+
+    .hero { text-align:center; padding:80px 20px; }
+
+    .hero h2 { font-size:2.2rem; margin-bottom:10px; }
+    .hero p { font-size:1rem; max-width:600px; margin:0 auto; color:#b7c0e0; }
+
+    .projects { padding:40px 20px; max-width:1000px; margin:0 auto; display:grid; grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); gap:20px; }
+
+    .project-card { background: rgba(255,255,255,0.05); border-radius:18px; overflow:hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.45); transition: transform 0.3s; }
+    .project-card:hover { transform: translateY(-6px); }
+
+    .project-card img { width:100%; height:180px; object-fit:cover; }
+
+    .project-content { padding:20px; }
+    .project-content h3 { font-size:1.2rem; margin-bottom:8px; }
+    .project-content p { font-size:0.95rem; color:#b7c0e0; margin-bottom:12px; }
+    .project-content a { text-decoration:none; color:var(--secondary); font-weight:600; }
+
+    footer { text-align:center; padding:20px; margin-top:40px; color:#888; }
+
+    .theme-toggle { position:fixed; bottom:20px; right:20px; padding:12px 16px; border:none; border-radius:12px; cursor:pointer; background: var(--primary); color:white; font-weight:600; transition: transform 0.25s; }
+    .theme-toggle:hover { transform: translateY(-2px); }
+
+    body.light { --bg-dark:#f5f7ff; --text-light:#0d1325; --text-dark:#0d1325; }
+    body.light header, body.light .project-card { background: rgba(0,0,0,0.05); }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Kauã França</h1>
+  <nav>
+    <a href="#about">Sobre</a>
+    <a href="#projects">Projetos</a>
+    <a href="#contact">Contato</a>
+  </nav>
+</header>
+
+<section class="hero" id="about">
+  <h2>Estudante de Desenvolvimento de Sistemas</h2>
+  <p>Focado em programação, desenvolvimento e criação de soluções digitais modernas e funcionais. Apaixonado por tecnologia, desafios e projetos que realmente fazem a diferença.</p>
+</section>
+
+<section class="projects" id="projects">
+  <div class="project-card">
+    <img src="img/Menu Links.png" alt="Menu de Links">
+    <div class="project-content">
+      <h3>Menu de Links</h3>
+      <p>Menu de links feito com html css e javascript</p>
+      <a href="#">Ver projeto →</a>
+    </div>
+  </div>
+
+  <div class="project-card">
+    <img src="img/Captura de Tela (49).png" alt="Urna escolar">
+    <div class="project-content">
+      <h3>Urna escolar</h3>
+      <p>Urna escolar feita com html css e javascript focada em votação eletrônica.</p>
+      <a href="#">Ver projeto →</a>
+    </div>
+  </div>
+
+  <div class="project-card">
+    <img src="img/image.png" alt="FrioCool">
+    <div class="project-content">
+      <h3>FrioCool</h3>
+      <p>Site de empresa de refrigeração, sendo criado...</p>
+      <a href="#">Ver projeto →</a>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <p>Feito com ❤️ por Kauã França | <a href="mailto:kaualucasfrancasantos@gmail.com">kaualucasfrancasantos@gmail.com</a></p>
+</footer>
+
+<button class="theme-toggle" id="toggleTheme">Alternar tema</button>
+
+<script>
+  const button = document.getElementById('toggleTheme');
+  const body = document.body;
+  const savedTheme = localStorage.getItem('theme');
+  if(savedTheme==='light'){ body.classList.add('light'); }
+
+  button.addEventListener('click',()=>{
+    body.classList.toggle('light');
+    const current = body.classList.contains('light')?'light':'dark';
+    localStorage.setItem('theme',current);
+  });
+</script>
+
+</body>
+</html>
