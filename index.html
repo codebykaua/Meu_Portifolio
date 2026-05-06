@@ -3,121 +3,259 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfólio | Kauã</title>
+  <title>Kaua.dev | Portifolio Programador</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --primary: #7c5cff;
-      --secondary: #00d4ff;
-      --bg-dark: #0a0f1f;
-      --bg-light: #f5f7ff;
-      --text-dark: #0d1325;
-      --text-light: #f5f7ff;
-    }
-
-    * { box-sizing: border-box; margin:0; padding:0; font-family:'Inter',sans-serif; }
-
-    body { background: var(--bg-dark); color: var(--text-light); line-height:1.6; }
-
-    header { display:flex; justify-content:space-between; align-items:center; padding:20px 40px; background: rgba(255,255,255,0.05); backdrop-filter: blur(12px); position:sticky; top:0; z-index:10; }
-
-    header h1 { font-size:1.8rem; font-weight:700; }
-
-    nav a { color: var(--text-light); margin-left:20px; text-decoration:none; font-weight:500; transition: color 0.3s; }
-
-    nav a:hover { color: var(--primary); }
-
-    .hero { text-align:center; padding:80px 20px; }
-
-    .hero h2 { font-size:2.2rem; margin-bottom:10px; }
-    .hero p { font-size:1rem; max-width:600px; margin:0 auto; color:#b7c0e0; }
-
-    .projects { padding:40px 20px; max-width:1000px; margin:0 auto; display:grid; grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); gap:20px; }
-
-    .project-card { background: rgba(255,255,255,0.05); border-radius:18px; overflow:hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.45); transition: transform 0.3s; }
-    .project-card:hover { transform: translateY(-6px); }
-
-    .project-card img { width:100%; height:180px; object-fit:cover; }
-
-    .project-content { padding:20px; }
-    .project-content h3 { font-size:1.2rem; margin-bottom:8px; }
-    .project-content p { font-size:0.95rem; color:#b7c0e0; margin-bottom:12px; }
-    .project-content a { text-decoration:none; color:var(--secondary); font-weight:600; }
-
-    footer { text-align:center; padding:20px; margin-top:40px; color:#888; }
-
-    .theme-toggle { position:fixed; bottom:20px; right:20px; padding:12px 16px; border:none; border-radius:12px; cursor:pointer; background: var(--primary); color:white; font-weight:600; transition: transform 0.25s; }
-    .theme-toggle:hover { transform: translateY(-2px); }
-
-    body.light { --bg-dark:#f5f7ff; --text-light:#0d1325; --text-dark:#0d1325; }
-    body.light header, body.light .project-card { background: rgba(0,0,0,0.05); }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <canvas class="pixel-sky" id="pixelSky" aria-hidden="true"></canvas>
 
-<header>
-  <h1>Kauã França</h1>
-  <nav>
-    <a href="#about">Sobre</a>
-    <a href="#projects">Projetos</a>
-    <a href="#contact">Contato</a>
-  </nav>
-</header>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="Inicio">
+      <span class="brand-cube"></span>
+      <span>Kaua.dev</span>
+    </a>
 
-<section class="hero" id="about">
-  <h2>Estudante de Desenvolvimento de Sistemas</h2>
-  <p>Focado em programação, desenvolvimento e criação de soluções digitais modernas e funcionais. Apaixonado por tecnologia, desafios e projetos que realmente fazem a diferença.</p>
-</section>
+    <nav class="nav" aria-label="Navegacao principal">
+      <a href="#stack">Stack</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
 
-<section class="projects" id="projects">
-  <div class="project-card">
-    <img src="img/Menu Links.png" alt="Menu de Links">
-    <div class="project-content">
-      <h3>Menu de Links</h3>
-      <p>Menu de links feito com html css e javascript</p>
-      <a href="https://codebykaua.github.io/Menu_links/">Ver projeto →</a>
-    </div>
-  </div>
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <p class="eyebrow">/home/kaual/portfolio</p>
+        <h1>Programador Jr full stack com inventario cheio de codigo.</h1>
+        <p class="hero-text">
+          Interfaces afiadas, APIs organizadas, SQL no trilho e uma estetica pixelada para deixar claro: aqui tem dev de verdade.
+        </p>
 
-  <div class="project-card">
-    <img src="img/Captura de Tela (49).png" alt="Urna escolar">
-    <div class="project-content">
-      <h3>Urna escolar</h3>
-      <p>Urna escolar feita com html css e javascript focada em votação eletrônica.</p>
-      <a href="https://codebykaua.github.io/projeto-votacao-escolar-CETI/">Ver projeto →</a>
-    </div>
-  </div>
+        <div class="hero-actions" aria-label="Acoes principais">
+          <a class="btn primary" href="#projetos">Ver projetos</a>
+          <a class="btn ghost" href="#contato">Chamar no terminal</a>
+        </div>
+      </div>
 
-  <div class="project-card">
-    <img src="img/image.png" alt="FrioCool">
-    <div class="project-content">
-      <h3>FrioCool</h3>
-      <p>Site de empresa de refrigeração, sendo criado...</p>
-      <a href="https://codebykaua.github.io/Site-de-refrigeracao-em-processamento/">Ver projeto →</a>
-    </div>
-  </div>
-</section>
+      <div class="hero-panel" aria-label="Terminal de apresentacao">
+        <div class="window-bar">
+          <span></span>
+          <span></span>
+          <span></span>
+          <strong>kaual@dev-machine</strong>
+        </div>
 
-<footer id="contact">
-  <p>Feito com ❤️ por Kauã França | <a href="mailto:kaua.dev@outlook.com.br">kaua.dev@outlook.com.br</a></p>
-</footer>
+        <div class="terminal">
+          <p><span class="prompt">$</span> npm run carreira</p>
+          <p class="log ok">build completo: front-end, back-end, banco e deploy</p>
+          <p><span class="prompt">$</span> git status --skills</p>
+          <p class="log">JS <span class="bar"><i style="width: 92%"></i></span></p>
+          <p class="log">HTML/CSS <span class="bar"><i style="width: 96%"></i></span></p>
+          <p class="log">Python/SQL <span class="bar"><i style="width: 84%"></i></span></p>
+          <p><span class="prompt">$</span> ./start --modo=programador</p>
+          <p class="typing" id="typingLine">iniciando inventario...</p>
+        </div>
+      </div>
+    </section>
 
-<button class="theme-toggle" id="toggleTheme">Alternar tema</button>
+    <section class="world-strip" aria-label="Cenario pixelado">
+      <div class="block grass"></div>
+      <div class="block dirt"></div>
+      <div class="block stone"></div>
+      <div class="block ore"></div>
+      <div class="block chest"></div>
+      <div class="block lava"></div>
+      <div class="block water"></div>
+      <div class="block grass"></div>
+      <div class="block dirt"></div>
+      <div class="block stone"></div>
+      <div class="block ore"></div>
+      <div class="block chest"></div>
+    </section>
 
-<script>
-  const button = document.getElementById('toggleTheme');
-  const body = document.body;
-  const savedTheme = localStorage.getItem('theme');
-  if(savedTheme==='light'){ body.classList.add('light'); }
+    <section class="section stack-section" id="stack">
+      <div class="section-heading">
+        <p class="eyebrow">skills.json</p>
+        <h2>Stack de batalha</h2>
+      </div>
 
-  button.addEventListener('click',()=>{
-    body.classList.toggle('light');
-    const current = body.classList.contains('light')?'light':'dark';
-    localStorage.setItem('theme',current);
-  });
-</script>
+      <div class="inventory">
+        <button class="slot active" data-skill="HTML">
+          <span class="slot-icon html">&lt;/&gt;</span>
+          <span>HTML</span>
+        </button>
+        <button class="slot" data-skill="CSS">
+          <span class="slot-icon css">#</span>
+          <span>CSS</span>
+        </button>
+        <button class="slot" data-skill="JS">
+          <span class="slot-icon js">JS</span>
+          <span>JS</span>
+        </button>
+        <button class="slot" data-skill="SQL">
+          <span class="slot-icon sql">SQL</span>
+          <span>SQL</span>
+        </button>
+        <button class="slot" data-skill="Python">
+          <span class="slot-icon python">PY</span>
+          <span>Python</span>
+        </button>
+        <button class="slot" data-skill="Git">
+          <span class="slot-icon git">G</span>
+          <span>Git</span>
+        </button>
+        <button class="slot" data-skill="GitHub">
+          <span class="slot-icon github">GH</span>
+          <span>GitHub</span>
+        </button>
+      </div>
 
+      <article class="skill-card" id="skillCard">
+        <p class="card-label">item selecionado</p>
+        <h3>HTML</h3>
+        <p>
+          Estruturo paginas com semantica, acessibilidade e uma base limpa para qualquer interface crescer sem virar bagunca.
+        </p>
+      </article>
+    </section>
+
+    <section class="section" id="projetos">
+      <div class="section-heading">
+        <p class="eyebrow">projects.map()</p>
+        <h2>Projetos minerados</h2>
+      </div>
+
+      <div class="projects-grid">
+        <article class="project-card">
+          <div class="project-screen cooling">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <p class="card-label">web app</p>
+          <h3>Sistema de Refrigeracao "FrioCool"</h3>
+          <p>Sistema para controle e apresentacao de servicos de refrigeracao, com interface direta e visual responsivo.</p>
+          <div class="tags">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JS</span>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-screen login">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <p class="card-label">api bancaria</p>
+          <h3>Modelagem de API Bancaria</h3>
+          <p>Modelagem de uma API bancaria com foco em estrutura, rotas, validacao, seguranca e regras de negocio.</p>
+          <div class="tags">
+            <span>Python</span>
+            <span>FastAPI</span>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-screen ballot">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <p class="card-label">escola</p>
+          <h3>Projeto de Urna Eletronica</h3>
+          <p>Urna eletronica criada para minha escola, com tela de votacao, interacao em JavaScript e layout organizado.</p>
+          <div class="tags">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JS</span>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-screen bank">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <p class="card-label">poo</p>
+          <h3>Sistema de Gerenciamento Bancario</h3>
+          <p>Sistema bancario feito em Python usando programacao orientada a objetos para contas, operacoes e regras.</p>
+          <div class="tags">
+            <span>Python</span>
+            <span>POO</span>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-screen ombudsman">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <p class="card-label">em progresso</p>
+          <h3>Projeto de Ouvidoria Escolar</h3>
+          <p>Projeto de ouvidoria para ambiente escolar, pensado para registrar mensagens, organizar demandas e melhorar a comunicacao.</p>
+          <div class="tags">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JS</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section about-section" id="sobre">
+      <div class="about-copy">
+        <p class="eyebrow">about.md</p>
+        <h2>Codigo com bloco no lugar certo</h2>
+        <p>
+          Sou um desenvolvedor que gosta de construir experiencias digitais completas: da primeira div ate o deploy. Penso em performance, responsividade, manutencao e naquele detalhe visual que faz o projeto parecer vivo.
+        </p>
+      </div>
+
+      <div class="stats">
+        <div>
+          <strong data-counter="24">0</strong>
+          <span>interfaces criadas</span>
+        </div>
+        <div>
+          <strong data-counter="12">0</strong>
+          <span>APIs entregues</span>
+        </div>
+        <div>
+          <strong data-counter="99">0</strong>
+          <span>bugs derrotados</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contato">
+      <div>
+        <p class="eyebrow">contact.sh</p>
+        <h2>Vamos buildar algo?</h2>
+        <p>
+          Me chame para buildar seu projeto, discutir ideias ou simplesmente trocar uma ideia sobre tecnologia. Estou sempre aberto para novas conexoes e desafios.
+        </p>
+      </div>
+
+      <div class="contact-actions">
+        <a class="btn primary" href="kaua.dev@outlook.com.br">Email</a>
+        <a class="btn ghost" href="https://github.com/codebykaua" target="_blank" rel="noreferrer">GitHub</a>
+        <a class="btn ghost" href="https://www.linkedin.com/in/kauafrancadev" target="_blank" rel="noreferrer">LinkedIn</a>
+      </div>
+    </section>
+  </main>
+
+  <button class="sound-toggle" id="soundToggle" type="button" aria-label="Alternar efeito visual">
+    <span></span>
+  </button>
+
+  <script src="script.js"></script>
 </body>
 </html>
